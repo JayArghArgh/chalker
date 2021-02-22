@@ -1,0 +1,31 @@
+<div class="row burgers">
+	<div class="col-md-6 col-sm-12">
+		<div class="burger-content border border-danger rounded">
+			<h2>Undevoured Burgers</h2>
+
+				<ul class="fa-ul">
+					{{#each burgers}}
+						{{#unless devoured}}
+							{{> burgers/burger-block devoured=false}}
+						{{/unless}}
+					{{/each}}
+				</ul>
+
+		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-12">
+		<div class="burger-content border border-danger rounded">
+			<h2>Devoured Burgers</h2>
+
+			<ul class="fa-ul">
+				{{#each burgers}}
+					{{#if devoured}}
+						{{> burgers/burger-block devoured=true}}
+					{{/if}}
+
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
