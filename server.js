@@ -1,6 +1,7 @@
 const express = require('express');
 
 // Add routers here
+const membersRouter = require('./routes/member-api-routes.js')
 
 // Setup the express app.
 const app = express();
@@ -16,7 +17,13 @@ app.use(express.json());
 // Static Directory
 app.use(express.static( 'public' ));
 
+// Set Handflebars
+const exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 // Invoke the routes here.
+membersRouter(app);
 
 // Sync the sequelize models and then start the express app.
 db.sequelize.sync({ force: true }).then(() => {
