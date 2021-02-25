@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Add routers here
-const membersRouter = require('./routes/member-api-routes.js')
+// const membersRouter = require('./routes/member-api-routes.js')
 
 // Setup the express app.
 const app = express();
@@ -23,9 +23,11 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Invoke the routes here.
-membersRouter(app);
+// membersRouter(app);
+require("./routes/member-api-routes.js")(app);
 
 // Sync the sequelize models and then start the express app.
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
+// db.sequelize.sync({ force: true }).then(() => {
 	app.listen(PORT, () => console.log(`Chalker is running on PORT ${PORT}`));
 });
