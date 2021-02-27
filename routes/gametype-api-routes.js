@@ -6,8 +6,9 @@ module.exports = (app) => {
 	app.get("/gametypes", (req, res) => {
 		db.GameTypes.findAll({
 		}).then((dbGameTypes) => {
+			const gameDetails = dbGameTypes.map(gametype => gametype.toJSON());
 			res.render("gametype", {
-				data: dbGameTypes.map(gametype => gametype.toJSON()),
+				data: gameDetails,
 			});
 		});
 	});
