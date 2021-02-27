@@ -7,8 +7,16 @@ module.exports = (sequelize, DataTypes) => {
 	})
 
 	Legs.associate = (models) => {
-		Legs.hasOne(models.Games, {});
-		Legs.hasOne(models.Members, {});
+		Legs.belongsTo(models.Games, {
+			foreignKey: {
+				allowNull: false,
+			},
+		});
+		Legs.belongsTo(models.Members, {
+			foreignKey: {
+				allowNull: false,
+			},
+		});
 	};
 
 	return Legs;

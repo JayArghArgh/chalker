@@ -6,8 +6,16 @@ module.exports = (sequelize, DataTypes) => {
 	});
 
 	GamePlayers.associate = (models) => {
-		GamePlayers.hasOne(models.Games, {});
-		GamePlayers.hasMany(models.Members, {});
+		GamePlayers.belongsTo(models.Games, {
+			foreignKey: {
+				allowNull: false,
+			},
+		});
+		GamePlayers.belongsTo(models.Members, {
+			foreignKey: {
+				allowNull: false,
+			},
+		});
 	};
 
 	return GamePlayers;

@@ -29,5 +29,5 @@ require("./routes/member-api-routes.js")(app);
 // Sync the sequelize models and then start the express app.
 db.sequelize.sync().then(() => {
 // db.sequelize.sync({ force: true }).then(() => {
-	app.listen(PORT, () => console.log(`Chalker is running on PORT ${PORT}`));
+	app.listen(PORT, () => console.log(`Chalker is running on http://localhost:${PORT}`));
 });

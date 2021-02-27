@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
 	})
 
 	Games.associate = (models) => {
-		Games.hasOne(models.GameTypes, {
+		Games.belongsTo(models.GameTypes, {
+			foreignKey: {
+				allowNull: false,
+			},
 		});
 	} ;
 
