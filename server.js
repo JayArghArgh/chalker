@@ -25,6 +25,7 @@ app.set('view engine', 'handlebars');
 // Invoke the routes here.
 // membersRouter(app);
 require("./routes/member-api-routes.js")(app);
+require("./routes/gametype-api-routes.js")(app);
 
 // Sync the sequelize models and then start the express app.
 db.sequelize.sync().then(() => {
