@@ -6,7 +6,7 @@ module.exports = (app) => {
 	app.get("/members", (req, res) => {
 		db.Members.findAll({
 		}).then((dbMembers) => {
-			res.render("index", {
+			res.render("member", {
 				data: dbMembers.map(member => member.toJSON()),
 			});
 		});
