@@ -22,10 +22,21 @@ module.exports = (app) => {
 			where: {
 				game_id: req.params.id,
 			},
+			include: [db.GamePlayers],
+			order: [
+				['GamePlayers', 'player_order', 'ASC'],
+			]
 		}).then((dbGames) => {
-			res.render("game", {
-				data: dbGames.dataValues,
-			});
+
+			// Create the handlebars object
+			const hbsObject = {
+				// game: dbGames,
+				gameId: req.params.id,
+				gamePlayers: dbGames.GamePlayers.map(gamePlayers => gamePlayers.toJSON()),
+			}
+
+			// Send it to the template
+			res.render('game', hbsObject);
 		});
 	})
 

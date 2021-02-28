@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false,
 			},
 		});
-	} ;
+		Games.hasMany(models.GamePlayers, {
+		});
+	};
 
 	return Games;
 }
