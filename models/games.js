@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		});
 		Games.hasMany(models.GamePlayers, {
+			foreignKey: "GameId",
 		});
 	};
 

@@ -7,9 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
 	GamePlayers.associate = (models) => {
 		GamePlayers.belongsTo(models.Games, {
-			foreignKey: {
-				allowNull: false,
-			},
+			foreignKey: "GameId",
 		});
 		GamePlayers.belongsTo(models.Members, {
 			foreignKey: {

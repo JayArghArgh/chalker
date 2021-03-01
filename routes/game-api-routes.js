@@ -22,17 +22,24 @@ module.exports = (app) => {
 			where: {
 				game_id: req.params.id,
 			},
-			include: [db.GamePlayers],
+			include: {
+				model: db.GamePlayers,
+				attributes: ['id', 'player_order', 'current_score'],
+			},
 			order: [
 				['GamePlayers', 'player_order', 'ASC'],
-			]
+			],
+			raw: false,
+			nested: true,
 		}).then((dbGames) => {
+
+			// console.dir(dbGames)
 
 			// Create the handlebars object
 			const hbsObject = {
-				// game: dbGames,
-				gameId: req.params.id,
-				gamePlayers: dbGames.GamePlayers.map(gamePlayers => gamePlayers.toJSON()),
+				game: dbGames.dataValues,
+				// gameId: req.params.id,
+				// gamePlayers: dbGames.GamePlayers.map(gamePlayers => gamePlayers.toJSON()),
 			}
 
 			// Send it to the template
