@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12">
 		<div class="dart-content border border-warning rounded">
-			<h2>Burma Road :: {{game_id}}</h2>
+			<h2>Burma Road :: {{gameid}}</h2>
 
 			<p>Add players</p>
 		</div>
@@ -9,7 +9,7 @@
 </div>
 <div class="container">
 	{{createdAt}}
-	{{#each game.GamePlayers}}
+	{{#each game.players}}
 		{{> game/game-block}}
 	{{/each}}
 

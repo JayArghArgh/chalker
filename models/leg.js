@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
-    Leg.belongsTo(models.Member, {
+    Leg.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
