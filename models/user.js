@@ -39,5 +39,12 @@ module.exports = (sequelize, DataTypes) => {
       null
     );
   });
+  // User.associate = models => {
+  //   User.hasMany(models.GamePlayer, {
+  //     foreignKey: "id",
+  //     as: "players"
+  //   });
+  // };
+
   return User;
 };

@@ -2,7 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   const GamePlayer = sequelize.define("GamePlayer", {
     playerOrder: DataTypes.INTEGER,
-    currentScore: DataTypes.DECIMAL(10, 2)
+    currentScore: DataTypes.DECIMAL(10, 2),
+    userId: DataTypes.INTEGER
   });
 
   GamePlayer.associate = models => {
@@ -10,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "GameId"
     });
     GamePlayer.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
+      foreignKey: "userId",
+      as: "player",
+      allowNull: false
     });
   };
 

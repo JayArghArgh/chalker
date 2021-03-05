@@ -23,7 +23,12 @@ module.exports = app => {
       include: {
         model: db.GamePlayer,
         as: "players",
-        attributes: ["id", "playerOrder", "currentScore"]
+        attributes: ["id", "playerOrder", "currentScore"],
+        include: {
+          model: db.User,
+          as: "player",
+          attributes: ["username"]
+        }
       },
       order: [["players", "playerOrder", "ASC"]],
       raw: false,
