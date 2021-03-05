@@ -4,9 +4,6 @@ const session = require("express-session");
 // Load in Passport
 const passport = require("./config/passport");
 
-// Add routers here
-// const membersRouter = require('./routes/member-api-routes.js')
-
 // Setup the express app.
 const app = express();
 const PORT = process.env.PORT || 8080;
