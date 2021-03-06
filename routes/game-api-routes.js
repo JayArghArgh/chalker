@@ -20,21 +20,30 @@ module.exports = app => {
       where: {
         gameId: req.params.id
       },
-      include: {
-        model: db.GamePlayer,
-        as: "players",
-        attributes: ["id", "playerOrder", "currentScore"],
-        include: {
-          model: db.User,
-          as: "player",
-          attributes: ["username"]
+      include: [
+        {
+          model: db.GamePlayer,
+          as: "players",
+          attributes: ["id", "playerOrder", "currentScore"],
+          include: [
+            {
+              model: db.User,
+              as: "player",
+              attributes: ["username"]
+            },
+            {
+              model: db.Leg,
+              as: "playerLegs",
+              attributes: ["legNumber", "legScore"]
+            }
+          ]
         }
-      },
+      ],
       order: [["players", "playerOrder", "ASC"]],
       raw: false,
       nested: true
     }).then(dbGames => {
-      // console.dir(dbGames)
+      // console.dir(dbGames);
 
       // Create the handlebars object
       const hbsObject = {

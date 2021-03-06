@@ -1,1 +1,17 @@
-<p>{{dataValues.player.dataValues.username}}: {{dataValues.currentScore}}</p>
+<div class="col-md-1">
+	<div class="row">
+		<div class="col">
+			{{this.player.dataValues.username}}
+			<p>{{dataValues.currentScore}}</p>
+		</div>
+	</div>
+
+{{#each this.playerLegs}}
+	<div class="row">
+		<div class="col">
+			{{this.dataValues.legScore}}
+		</div>
+	</div>
+{{/each}}
+
+</div>

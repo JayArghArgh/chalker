@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "player",
       allowNull: false
     });
+    GamePlayer.hasMany(models.Leg, {
+      foreignKey: "userId",
+      as: "playerLegs"
+    });
   };
 
   return GamePlayer;

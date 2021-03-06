@@ -7,86 +7,20 @@
 		</div>
 	</div>
 </div>
-<div class="container">
-	{{createdAt}}
-	{{#each game.players}}
-		{{> game/game-block}}
-	{{/each}}
+<div class="container scoreboard">
+	<div class="row">
+		<div class="col-md-1">
+			<div class="row">
+				{{> game/game-target-block}}
+			</div>
+		</div>
+		<div class="col-md-11">
+			<div class="row">
+				{{#each game.players}}
+					{{> game/game-block}}
+				{{/each}}
+			</div>
+		</div>
 
+	</div>
 </div>
-
-
-<!--<div class="row">-->
-<!--	<div class="col-md-12 col-sm-12">-->
-<!--		<table class="table table-secondary table-hover table-striped">-->
-<!--			<thead>-->
-<!--				<tr>-->
-<!--					<th scope="col">#</th>-->
-<!--					<th scope="col">1 JR</th>-->
-<!--					<th scope="col">2 RMK</th>-->
-<!--					<th scope="col">3 Damo</th>-->
-<!--					<th scope="col">4 Seamie25</th>-->
-<!--					<th scope="col">5 Tony</th>-->
-<!--					<th scope="col">6 Jase</th>-->
-<!--					<th scope="col">7 Aaron</th>-->
-<!--					<th scope="col">8 Rhys</th>-->
-<!--					<th scope="col">9 Meatson</th>-->
-<!--					<th scope="col">10 Chris</th>-->
-<!--					<th scope="col">11 Luke</th>-->
-<!--					<th scope="col">12 Adam</th>-->
-<!--				</tr>-->
-<!--			</thead>-->
-<!--			<tbody>-->
-<!--				<tr>-->
-<!--					<th scope="row">13</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">14</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">D</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">15</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">16</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">T</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">17</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">18</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">B</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">19</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">20</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--					<th scope="row">Bull</th>-->
-<!--					<td colspan="12">scores</td>-->
-<!--				</tr>-->
-
-<!--			</tbody>-->
-<!--		</table>-->
-<!--	</div>-->
-<!--</div>-->

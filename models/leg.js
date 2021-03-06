@@ -1,8 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Leg = sequelize.define("Leg", {
     legNumber: DataTypes.INTEGER,
-    darts: DataTypes.STRING,
-    legScore: DataTypes.DECIMAL(10, 2)
+    darts: {
+      type: DataTypes.STRING,
+      get: () => JSON.parse(this.getDataValue("darts"))
+    },
+    legScore: DataTypes.DECIMAL(10, 2),
+    userId: DataTypes.INTEGER
   });
 
   Leg.associate = models => {
@@ -12,9 +16,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
     Leg.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
+      as: "legOwner",
+      foreignKey: "userId"
+    });
+    Leg.hasOne(models.GamePlayer, {
+      as: "legThrower",
+      foreignKey: "userId"
     });
   };
 

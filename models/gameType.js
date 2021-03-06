@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     gameRules: DataTypes.STRING
   });
 
+  // TODO I dont think this is required as a back association.
   GameType.associate = models => {
     GameType.hasMany(models.GameType, {
       as: "variant_of"
