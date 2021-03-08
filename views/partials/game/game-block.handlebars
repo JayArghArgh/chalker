@@ -2,16 +2,14 @@
 	<div class="row">
 		<div class="col">
 			{{this.player.dataValues.username}}
+			{{this.player.dataValues.id}}
 			<p>{{dataValues.currentScore}}</p>
 		</div>
 	</div>
 
-{{#each this.playerLegs}}
-	<div class="row">
-		<div class="col">
-			{{this.dataValues.legScore}}
-		</div>
-	</div>
+
+{{#each this.playerLegs userId=this.player.dataValues.id}}
+	{{> game/game-leg-block userId=../this.player.dataValues.id}}
 {{/each}}
 
 </div>

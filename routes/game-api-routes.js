@@ -29,12 +29,12 @@ module.exports = app => {
             {
               model: db.User,
               as: "player",
-              attributes: ["username"]
+              attributes: ["id", "username"]
             },
             {
               model: db.Leg,
               as: "playerLegs",
-              attributes: ["legNumber", "legScore"]
+              attributes: ["id", "legNumber", "legScore"]
             }
           ]
         }
