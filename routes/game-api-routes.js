@@ -34,7 +34,7 @@ module.exports = app => {
             {
               model: db.Leg,
               as: "playerLegs",
-              attributes: ["id", "legNumber", "legScore"]
+              attributes: ["id", "legNumber", "legScoreInt"]
             }
           ]
         }

@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       get: () => JSON.parse(this.getDataValue("darts"))
     },
     legScore: DataTypes.DECIMAL(10, 2),
+    legScoreInt: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   });
 
