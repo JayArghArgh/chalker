@@ -10,7 +10,6 @@ btnPlayerScore.forEach(button => {
   button.addEventListener("click", e => {
     e.stopPropagation();
     const id = e.target.getAttribute("data-userid");
-    console.log(`clickety-clackety-this-is-whackety ${id}`);
-    divPlayerScore.html(id);
+    divPlayerScore.html(`Player ${id}`);
   });
 });

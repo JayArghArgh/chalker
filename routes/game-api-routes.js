@@ -14,6 +14,9 @@ module.exports = app => {
       });
     });
   });
+  app.get("/g", (req, res) => {
+    res.render("game2");
+  });
 
   app.get("/games/:id", (req, res) => {
     db.Game.findOne({
