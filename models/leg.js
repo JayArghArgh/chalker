@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Leg = sequelize.define("Leg", {
-    setsPlayed: DataTypes.JSON,
-    setResults: DataTypes.JSON
+    legsPlayed: DataTypes.JSON,
+    legResults: DataTypes.JSON
   });
 
   Leg.associate = models => {
