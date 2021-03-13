@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "tournamentMatch",
       foreignKey: "tournId"
     });
+    Match.hasMany(models.Set, {
+      as: "matchSet",
+      foreignKey: "matchId"
+    });
   };
 
   return Match;
