@@ -3,10 +3,13 @@
 const db = require("../models");
 
 module.exports = app => {
+  app.get("/", (req, res) => {
+    res.render("index");
+  });
   app.get("/tournament/:tournamentNo?", (req, res) => {
     res.render("tournament");
   });
-  app.get("/match/:matchNo:?", (req, res) => {
+  app.get("/match/:matchNo?", (req, res) => {
     res.render("match");
   });
   app.get("/set/:setNo?", (req, res) => {

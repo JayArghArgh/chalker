@@ -41,6 +41,6 @@ require("./routes/api-routes")(app);
 // Sync the sequelize models and then start the express app.
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
-    console.log(`Chalker is running on http://localhost:${PORT}`);
+    console.log(`:) Chalker is running on http://localhost:${PORT}`);
   });
 });
