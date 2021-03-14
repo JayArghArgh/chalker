@@ -2,8 +2,19 @@
 	<div class="col-md-12 col-sm-12">
 		<div class="dart-content border border-success rounded">
 			<h1>{{data.title}} Prize: {{data.prize}}</h1>
-			<button type="button" class="btn btn-primary">+ Entrant</button> <button type="button" class="btn btn-primary">+ Match</button>
 			<p>Playing for sets or legs?</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						{{> tournament/add-player-form}}
+					</div>
+
+					<div class="col-md-6">
+						{{> tournament/create-match-form}}
+					</div>
+
+				</div>
+			</div>
 			<h2>Tournament Entrants</h2>
 			<table class="table">
 				<tr>
