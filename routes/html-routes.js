@@ -5,6 +5,9 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = app => {
+  // app.get("/tournament", (req, res) => {
+  //   res.render("tournament");
+  // });
   // app.get("/", (req, res) => {
   //   // If the user already has an account send them to the members page
   //   if (req.user) {

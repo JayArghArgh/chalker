@@ -1,7 +1,11 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12">
 		<div class="dart-content border border-success rounded">
-			<p>Welcome to the Tournament!</p>
+			<ul>
+			{{#each data}}
+				{{> tournament/generic}}
+			{{/each}}
+			</ul>
 		</div>
 	</div>
 </div>

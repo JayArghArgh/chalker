@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Tournament.associate = models => {
     Tournament.belongsTo(models.User, {
       as: "tournamentCreator",
-      foreignKey: "userId"
+      foreignKey: "createdBy"
     });
     Tournament.hasMany(models.Match, {
       as: "tournamentMatch",

@@ -6,9 +6,7 @@ module.exports = app => {
   app.get("/", (req, res) => {
     res.render("index");
   });
-  app.get("/tournament/:tournamentNo?", (req, res) => {
-    res.render("tournament");
-  });
+  // /tournament/ own route.
   app.get("/match/:matchNo?", (req, res) => {
     res.render("match");
   });

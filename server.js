@@ -34,6 +34,7 @@ app.use(passport.session());
 // membersRouter(app);
 require("./routes/html-routes")(app);
 require("./routes/api-routes")(app);
+require("./routes/tournament-routes")(app);
 // require("./routes/member-api-routes.js")(app);
 // require("./routes/gametype-api-routes.js")(app);
 // require("./routes/game-api-routes.js")(app);
