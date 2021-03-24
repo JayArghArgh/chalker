@@ -9,7 +9,7 @@ const MatchSchema = new Schema({
   prize: [{
     title: {type: String},
     desc: {type: String},
-    value: {type: String}
+    value: {type: Number}
   }],
   players: [{
     playerId: {type: String},
