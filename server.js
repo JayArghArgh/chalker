@@ -43,7 +43,8 @@ app.set("view engine", "handlebars");
 // app.use(passport.session());
 
 // Routes
-// app.use(require("./routes/api.js"));
+app.use(require("./routes/html-routes"));
+app.use(require("./routes/api-routes"));
 // membersRouter(app);
 // require("./routes/html-routes")(app);
 // require("./routes/api-routes")(app);
