@@ -145,3 +145,21 @@ li a hover {
     border-top: 1px solid #ccc;
     z-index: 999;
 }
+
+.main {
+    margin-bottom: 200px;
+}
+
+
+.footer {
+    padding-top: 12px;
+    background: black;
+    color: whitesmoke;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    width: 100%;
+}
+
+.footer li a {
+    color: whitesmoke;
+}
