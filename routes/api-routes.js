@@ -8,8 +8,17 @@ router.get("/api/tournament/:tournamentNo?", (req, res) => {
 })
 
 // Get Matches
-router.get("/api/match/:matchNo?", (req, res) => {
+router.get("/api/match", (req, res) => {
   Match.find()
+    .then(dbMatch => {
+      res.json(dbMatch);
+    })
+    .catch(err => res.status(400).json(err));
+});
+
+// Get Single match
+router.get("/api/match/:matchNo", (req, res) => {
+  Match.find({"_id": req.params.matchNo})
     .then(dbMatch => {
       res.json(dbMatch);
     })
